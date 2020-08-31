@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+    <p>Страница</p>
+    {% if tasks %}
+        {% for i in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.text }}</p>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <p class="alert alert-success">У вас нет записей!</p>
+    {% endif %}
+{% endblock %}
